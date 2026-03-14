@@ -5,6 +5,7 @@ import time
 from typing import Dict
 
 from orchestrator.webhooks.client import PatchWebhookClient
+from orchestrator.webhooks.activity import ActivityWebhookClient
 from orchestrator.models.registry import ModelRegistry, ModelSpec
 from orchestrator.moderation.policy import ModerationPolicy
 
@@ -61,7 +62,8 @@ def build_role_model_assignments() -> Dict[str, str]:
 
 
 async def run_loop() -> None:
-  webhook_url = os.environ.get("VIVAIRIUM_PATCH_WEBHOOK_URL", "http://localhost:8888/.netlify/functions/patch-webhook")
+  webhook_url = os.environ.get("VIVAIRIUM_PATCH_WEBHOOK_URL", "http://localhost:9999/.netlify/functions/patch-webhook")
+  activity_url = os.environ.get("VIVAIRIUM_ACTIVITY_WEBHOOK_URL", webhook_url.replace("patch-webhook", "activity-event"))
   run_id = os.environ.get("VIVAIRIUM_RUN_ID", f"run_{int(time.time())}")
   strict_webhooks = env_flag("VIVAIRIUM_STRICT_WEBHOOKS", default=False)
   emit_local_fallback = env_flag("VIVAIRIUM_PRINT_PATCHES_ON_FAILURE", default=True)
@@ -71,14 +73,26 @@ async def run_loop() -> None:
 
   moderation = ModerationPolicy()
   client = PatchWebhookClient(webhook_url=webhook_url)
+  activity_client = ActivityWebhookClient(activity_url=activity_url)
 
   print(f"[orchestrator] run_id={run_id}", file=sys.stderr)
   print(f"[orchestrator] webhook_url={webhook_url}", file=sys.stderr)
+  print(f"[orchestrator] activity_url={activity_url}", file=sys.stderr)
   print(f"[orchestrator] strict_webhooks={strict_webhooks}", file=sys.stderr)
   for role, model_id in role_model_assignments.items():
     spec = registry.get(model_id)
     if spec is not None:
       print(f"[orchestrator] role_model role={role} model={spec.config['model']}", file=sys.stderr)
+      try:
+        await activity_client.emit(
+          source="agent",
+          scope=role,
+          level="info",
+          message="role model assignment loaded",
+          details={"model_id": model_id, "model_name": spec.config["model"]},
+        )
+      except Exception:
+        pass
 
   while True:
     # MVP: emit a simple agent-driven evolution patch envelope periodically.
@@ -107,14 +121,60 @@ async def run_loop() -> None:
     }
 
     if not moderation.is_allowed_json(proposal):
+      try:
+        await activity_client.emit(
+          source="orchestrator",
+          scope="orchestrator",
+          level="warn",
+          message="proposal rejected by moderation",
+          details={"run_id": run_id},
+        )
+      except Exception:
+        pass
       await asyncio.sleep(3)
       continue
 
     sent, envelope, error = await client.try_send_patch(run_id=run_id, patch=proposal)
     if sent:
       print(f"[orchestrator] patch_sent patch_id={envelope['patch_id']}", file=sys.stderr)
+      try:
+        await activity_client.emit(
+          source="orchestrator",
+          scope="orchestrator",
+          level="info",
+          message="world patch sent",
+          details={
+            "run_id": run_id,
+            "patch_id": envelope["patch_id"],
+            "agent_id": proposal["evolution"]["source_agent_id"],
+            "model_id": proposal["evolution"]["source_model_id"],
+          },
+        )
+        await activity_client.emit(
+          source="agent",
+          scope="biome_builder",
+          level="info",
+          message="submitted evolution proposal",
+          details={
+            "intent": proposal["evolution"]["intent"],
+            "target": proposal["evolution"]["target"],
+            "duration_ms": proposal["evolution"]["duration_ms"],
+          },
+        )
+      except Exception:
+        pass
     else:
       print(f"[orchestrator] patch_send_failed error={error}", file=sys.stderr)
+      try:
+        await activity_client.emit(
+          source="orchestrator",
+          scope="webhook",
+          level="error",
+          message="world patch delivery failed",
+          details={"run_id": run_id, "error": error},
+        )
+      except Exception:
+        pass
       if emit_local_fallback:
         print("[orchestrator] patch_fallback_payload=", file=sys.stderr)
         print(client.format_envelope(envelope), file=sys.stderr)

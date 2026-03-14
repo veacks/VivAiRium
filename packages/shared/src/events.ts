@@ -19,3 +19,14 @@ export type WorldPatchEnvelope = {
   patch: unknown;
 };
 
+export type ActivityLevel = "debug" | "info" | "warn" | "error";
+
+export type ActivityEvent = {
+  id: string;
+  at_ms: number;
+  source: "orchestrator" | "agent" | "functions";
+  scope: "orchestrator" | "biome_builder" | "meta_agent" | "mutation_builder" | "webhook";
+  level: ActivityLevel;
+  message: string;
+  details?: Record<string, unknown>;
+};

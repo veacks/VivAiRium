@@ -42,7 +42,9 @@ pnpm dev:local
 This starts:
 - Netlify Functions locally on `http://localhost:9999`
 - the Vite web app on `http://localhost:5173`
-- the orchestrator after the Functions endpoint is reachable
+- the orchestrator automatically after the Functions endpoint is reachable
+
+The web UI includes a live activity console fed by `/api/activity-feed`, so you can watch orchestrator and agent events in real time.
 
 ### 3) Run orchestrator (optional; posts patches to webhook)
 
@@ -62,6 +64,7 @@ Local behavior:
 - If no webhook receiver is running, the orchestrator stays alive and prints the patch payload to stderr.
 - Set `VIVAIRIUM_STRICT_WEBHOOKS=true` to make webhook delivery failures crash the process.
 - Set `VIVAIRIUM_PATCH_WEBHOOK_URL` to your Netlify/local Functions endpoint when one is available.
+- The standalone default targets `http://localhost:9999/.netlify/functions/patch-webhook` to match `pnpm dev:local`.
 
 Default Ollama role preset:
 - `biome_builder -> llama3.1`

@@ -73,14 +73,6 @@ startProcess(
   { cwd: process.cwd() },
 );
 
-console.error("[dev:local] starting web dev server");
-startProcess("web", "pnpm", ["-C", "apps/web", "dev"], {
-  cwd: process.cwd(),
-  env: {
-    VITE_FUNCTIONS_ORIGIN: `http://localhost:${functionsPort}`,
-  },
-});
-
 waitForUrl(`http://localhost:${functionsPort}/.netlify/functions/patch-feed`, 30000).then((ready) => {
   if (shuttingDown) {
     return;
@@ -90,11 +82,19 @@ waitForUrl(`http://localhost:${functionsPort}/.netlify/functions/patch-feed`, 30
     shutdown(1);
     return;
   }
+  console.error("[dev:local] starting web dev server");
+  startProcess("web", "pnpm", ["-C", "apps/web", "dev"], {
+    cwd: process.cwd(),
+    env: {
+      VITE_FUNCTIONS_ORIGIN: `http://localhost:${functionsPort}`,
+    },
+  });
   console.error("[dev:local] starting orchestrator");
   startProcess("orchestrator", "pnpm", ["orchestrator:run"], {
     cwd: process.cwd(),
     env: {
       VIVAIRIUM_PATCH_WEBHOOK_URL: `http://localhost:${functionsPort}/.netlify/functions/patch-webhook`,
+      VIVAIRIUM_ACTIVITY_WEBHOOK_URL: `http://localhost:${functionsPort}/.netlify/functions/activity-event`,
     },
   });
 });

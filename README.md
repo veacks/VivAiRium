@@ -35,6 +35,15 @@ pnpm i
 pnpm -C apps/web dev
 ```
 
+Full local stack:
+```bash
+pnpm dev:local
+```
+This starts:
+- Netlify Functions locally on `http://localhost:9999`
+- the Vite web app on `http://localhost:5173`
+- the orchestrator after the Functions endpoint is reachable
+
 ### 3) Run orchestrator (optional; posts patches to webhook)
 
 Using `uv`:
@@ -53,6 +62,19 @@ Local behavior:
 - If no webhook receiver is running, the orchestrator stays alive and prints the patch payload to stderr.
 - Set `VIVAIRIUM_STRICT_WEBHOOKS=true` to make webhook delivery failures crash the process.
 - Set `VIVAIRIUM_PATCH_WEBHOOK_URL` to your Netlify/local Functions endpoint when one is available.
+
+Default Ollama role preset:
+- `biome_builder -> llama3.1`
+- `meta_agent -> qwen2.5:7b`
+- `mutation_builder -> qwen2.5-coder:7b`
+
+Optional overrides:
+```bash
+OLLAMA_MODEL_BIOME=llama3.1 \
+OLLAMA_MODEL_META=qwen2.5:7b \
+OLLAMA_MODEL_MUTATION=qwen2.5-coder:7b \
+pnpm orchestrator:run
+```
 
 ### 4) Netlify (local)
 

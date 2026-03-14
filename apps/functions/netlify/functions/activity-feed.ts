@@ -1,5 +1,5 @@
 import type { Handler } from "@netlify/functions";
-import { activityLog } from "./_store";
+import { activityLog } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   const sinceParam = event.queryStringParameters?.since ?? "0";
@@ -9,7 +9,10 @@ export const handler: Handler = async (event) => {
 
   return {
     statusCode: 200,
-    headers: { "content-type": "application/json" },
+    headers: {
+      "cache-control": "no-store",
+      "content-type": "application/json",
+    },
     body: JSON.stringify({ events, next_since }),
   };
 };

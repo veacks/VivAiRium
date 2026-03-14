@@ -1,6 +1,6 @@
 import type { Handler } from "@netlify/functions";
 import type { WorldPatchEnvelope } from "@aquarium/shared/events";
-import { appendActivity, patchLog, seenIdempotency } from "./_store";
+import { appendActivity, patchLog, seenIdempotency } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };

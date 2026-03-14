@@ -1,5 +1,5 @@
 import type { Handler } from "@netlify/functions";
-import { votes } from "./_store";
+import { votes } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
@@ -9,4 +9,3 @@ export const handler: Handler = async (event) => {
   votes.push({ at_ms: Date.now(), value: body.value, weight: typeof body.weight === "number" ? body.weight : 1 });
   return { statusCode: 200, body: "OK" };
 };
-

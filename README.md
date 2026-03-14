@@ -40,11 +40,16 @@ Full local stack:
 pnpm dev:local
 ```
 This starts:
-- Netlify Functions locally on `http://localhost:9999`
+- the repo-local Functions server on `http://localhost:9999`
 - the Vite web app on `http://localhost:5173`
 - the orchestrator automatically after the Functions endpoint is reachable
 
 The web UI includes a live activity console fed by `/api/activity-feed`, so you can watch orchestrator and agent events in real time.
+
+To isolate the API layer only:
+```bash
+pnpm dev:functions:local
+```
 
 ### 3) Run orchestrator (optional; posts patches to webhook)
 
@@ -79,9 +84,9 @@ OLLAMA_MODEL_MUTATION=qwen2.5-coder:7b \
 pnpm orchestrator:run
 ```
 
-### 4) Netlify (local)
+### 4) Functions (local)
 
-Use Netlify CLI to run Functions + web together (recommended for `/api/*` routes).
+`pnpm dev:local` and `pnpm dev:functions:local` use the repo-local Functions server, which serves the same handlers as `apps/functions/netlify/functions` without requiring a global `netlify-cli` install.
 
 ## Core architecture rules
 

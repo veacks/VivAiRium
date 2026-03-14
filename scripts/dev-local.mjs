@@ -65,12 +65,17 @@ async function waitForUrl(url, timeoutMs) {
 process.on("SIGINT", () => shutdown(0));
 process.on("SIGTERM", () => shutdown(0));
 
-console.error("[dev:local] starting netlify local dev");
+console.error("[dev:local] starting local functions server");
 startProcess(
   "functions",
-  "npx",
-  ["netlify-cli", "functions:serve", "--offline", "--filter", "@aquarium/functions", "--port", functionsPort],
-  { cwd: process.cwd() },
+  "node",
+  ["scripts/local-functions-server.mjs"],
+  {
+    cwd: process.cwd(),
+    env: {
+      VIVAIRIUM_FUNCTIONS_PORT: functionsPort,
+    },
+  },
 );
 
 waitForUrl(`http://localhost:${functionsPort}/.netlify/functions/patch-feed`, 30000).then((ready) => {

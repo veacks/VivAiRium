@@ -1,9 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "types": ["node"],
     "moduleResolution": "Bundler"
   },
   "include": ["netlify/functions"]
 }
-

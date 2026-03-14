@@ -71,12 +71,21 @@ function EntityMesh({ entity }: { entity: WorldEntity }) {
             : "#8a5cff";
 
   const y = entity.position[1] + (entity.archetype === "fauna" ? Math.sin(entity.updated_at_ms / 700) * 0.15 : 0);
+  const emissiveIntensity = entity.lifecycle_stage === "seed" ? 0.18 : entity.lifecycle_stage === "active" ? 0.1 : 0.05;
+
+  if (entity.archetype === "flora") {
+    return (
+      <mesh position={[entity.position[0], y, entity.position[2]]} rotation={[0, entity.rotationY, 0]} scale={entity.scale}>
+        <coneGeometry args={[0.45, 1.8, 7]} />
+        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={emissiveIntensity} />
+      </mesh>
+    );
+  }
 
   return (
     <mesh position={[entity.position[0], y, entity.position[2]]} rotation={[0, entity.rotationY, 0]} scale={entity.scale}>
       <sphereGeometry args={[0.5, 16, 16]} />
-      <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.05} />
+      <meshStandardMaterial color={color} emissive={color} emissiveIntensity={emissiveIntensity} />
     </mesh>
   );
 }
-

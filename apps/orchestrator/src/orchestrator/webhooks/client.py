@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import time
+import uuid
 from dataclasses import dataclass
 from typing import Any, Dict
 
@@ -13,10 +14,12 @@ class PatchWebhookClient:
   webhook_url: str
 
   def build_envelope(self, run_id: str, patch: Dict[str, Any]) -> Dict[str, Any]:
+    created_at_ms = int(time.time() * 1000)
+    suffix = uuid.uuid4().hex
     return {
-      "patch_id": f"patch_{int(time.time() * 1000)}",
-      "idempotency_key": f"{run_id}:{int(time.time() * 1000)}",
-      "created_at_ms": int(time.time() * 1000),
+      "patch_id": f"patch_{created_at_ms}_{suffix}",
+      "idempotency_key": f"{run_id}:{created_at_ms}:{suffix}",
+      "created_at_ms": created_at_ms,
       "source": {"kind": "orchestrator", "run_id": run_id},
       "patch": patch,
     }

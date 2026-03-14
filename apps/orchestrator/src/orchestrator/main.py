@@ -1,4 +1,5 @@
 import asyncio
+import math
 import os
 import sys
 import time
@@ -95,24 +96,50 @@ async def run_loop() -> None:
         pass
 
   while True:
-    # MVP: emit a simple agent-driven evolution patch envelope periodically.
+    # Emit a visible orchestrator-authored flora entity near the origin, then evolve it over time.
     biome_model_id = role_model_assignments["biome_builder"]
     biome_model_spec = registry.get(biome_model_id)
+    now_ms = int(time.time() * 1000)
+    orbit_index = (now_ms // 10_000) % 8
+    angle = orbit_index * (math.pi / 4)
+    entity_id = f"entity_orch_{now_ms}"
+    evolution_id = f"evo_orch_{now_ms}"
+    entity_create_patch = {
+      "kind": "entity.create",
+      "entity": {
+        "id": entity_id,
+        "archetype": "flora",
+        "provenance": {
+          "creator_agent_id": "agent_biome_builder",
+          "creator_model_id": biome_model_id,
+          "originating_evolution_id": evolution_id,
+        },
+        "chunk_id": "0:0",
+        "position": [round(math.cos(angle) * 4, 3), 0.35, round(math.sin(angle) * 4, 3)],
+        "rotationY": round(angle, 3),
+        "scale": 0.35,
+        "lifecycle_stage": "seed",
+        "lifecycle_t": 0,
+        "visible_hint": True,
+        "created_at_ms": now_ms,
+        "updated_at_ms": now_ms,
+      },
+    }
     proposal = {
       "kind": "evolution.schedule",
       "evolution": {
-        "id": f"evo_orch_{int(time.time() * 1000)}",
+        "id": evolution_id,
         "source_agent_id": "agent_biome_builder",
         "source_model_id": biome_model_id,
-        "intent": "Orchestrator proposes a calm ambience shift.",
-        "start_time_ms": int(time.time() * 1000),
+        "intent": "Orchestrator grows a visible flora cluster near the aquarium core.",
+        "start_time_ms": now_ms,
         "duration_ms": 20000,
-        "stages": [{"name": "fade_in", "duration_ms": 8000}, {"name": "hold", "duration_ms": 8000}, {"name": "fade_out", "duration_ms": 4000}],
+        "stages": [{"name": "seed", "duration_ms": 5000}, {"name": "sprout", "duration_ms": 7000}, {"name": "mature", "duration_ms": 8000}],
         "progress_t": 0,
         "canceled": False,
-        "target": {"kind": "chunk", "chunk_id": "0:0"},
+        "target": {"kind": "entity", "entity_id": entity_id},
         "expected_final": {
-          "ambience": "calm",
+          "archetype": "flora",
           "assigned_role_models": role_model_assignments,
           "source_model_name": biome_model_spec.config["model"] if biome_model_spec is not None else None,
         },
@@ -134,8 +161,10 @@ async def run_loop() -> None:
       await asyncio.sleep(3)
       continue
 
+    entity_sent, entity_envelope, entity_error = await client.try_send_patch(run_id=run_id, patch=entity_create_patch)
     sent, envelope, error = await client.try_send_patch(run_id=run_id, patch=proposal)
-    if sent:
+    if entity_sent and sent:
+      print(f"[orchestrator] patch_sent patch_id={entity_envelope['patch_id']}", file=sys.stderr)
       print(f"[orchestrator] patch_sent patch_id={envelope['patch_id']}", file=sys.stderr)
       try:
         await activity_client.emit(
@@ -148,6 +177,7 @@ async def run_loop() -> None:
             "patch_id": envelope["patch_id"],
             "agent_id": proposal["evolution"]["source_agent_id"],
             "model_id": proposal["evolution"]["source_model_id"],
+            "entity_id": entity_id,
           },
         )
         await activity_client.emit(
@@ -159,27 +189,29 @@ async def run_loop() -> None:
             "intent": proposal["evolution"]["intent"],
             "target": proposal["evolution"]["target"],
             "duration_ms": proposal["evolution"]["duration_ms"],
+            "entity_id": entity_id,
           },
         )
       except Exception:
         pass
     else:
-      print(f"[orchestrator] patch_send_failed error={error}", file=sys.stderr)
+      failure = entity_error or error
+      print(f"[orchestrator] patch_send_failed error={failure}", file=sys.stderr)
       try:
         await activity_client.emit(
           source="orchestrator",
           scope="webhook",
           level="error",
           message="world patch delivery failed",
-          details={"run_id": run_id, "error": error},
+          details={"run_id": run_id, "error": failure},
         )
       except Exception:
         pass
       if emit_local_fallback:
         print("[orchestrator] patch_fallback_payload=", file=sys.stderr)
-        print(client.format_envelope(envelope), file=sys.stderr)
+        print(client.format_envelope(entity_envelope if not entity_sent else envelope), file=sys.stderr)
       if strict_webhooks:
-        raise RuntimeError(f"Failed to send patch to {webhook_url}: {error}")
+        raise RuntimeError(f"Failed to send patch to {webhook_url}: {failure}")
 
     await asyncio.sleep(10)
 

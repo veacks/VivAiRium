@@ -1,6 +1,6 @@
 import type { Handler } from "@netlify/functions";
 import type { ActivityEvent } from "@aquarium/shared/events";
-import { appendActivity } from "./_store";
+import { appendActivity } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
@@ -9,4 +9,3 @@ export const handler: Handler = async (event) => {
   appendActivity(payload);
   return { statusCode: 202, body: "Accepted" };
 };
-

@@ -118,9 +118,29 @@ export function stepWorld(world: World, nowMs: number) {
     world.evolutions.set(id, next);
     if (next.canceled) continue;
 
-    // MVP: apply a simple drift + lifecycle oscillation as a visible time-based evolution effect.
     const stageIdx = stageIndexForEvolution(next);
     const driftStrength = stageIdx === 1 ? 1 : stageIdx === 0 ? 0.4 : 0.2;
+
+    if (next.target.kind === "entity") {
+      const target = world.entities.get(next.target.entity_id);
+      if (target) {
+        const stageName = next.stages[stageIdx]?.name ?? "active";
+        const stageMap: Record<string, WorldEntity["lifecycle_stage"]> = {
+          seed: "seed",
+          sprout: "active",
+          mature: "active",
+          unstable: "unstable",
+          decay: "decay",
+        };
+        const growth = 0.35 + next.progress_t * 1.4;
+        target.lifecycle_stage = stageMap[stageName] ?? "active";
+        target.lifecycle_t = next.progress_t;
+        target.scale = growth;
+        target.position = [target.position[0], 0.2 + growth * 0.35, target.position[2]];
+        target.updated_at_ms = nowMs;
+      }
+      continue;
+    }
 
     for (const ent of world.entities.values()) {
       if (ent.archetype !== "fauna") continue;
@@ -180,4 +200,3 @@ export function stepWorld(world: World, nowMs: number) {
     });
   }
 }
-

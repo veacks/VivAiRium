@@ -1,5 +1,5 @@
 import type { Handler } from "@netlify/functions";
-import { appendActivity, deployEvents } from "./_store";
+import { appendActivity, deployEvents } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };

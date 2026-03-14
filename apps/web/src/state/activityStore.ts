@@ -47,12 +47,16 @@ export const useActivityStore = create<ActivityState>((set) => ({
   lastFeedSuccessAt: null,
   ingest: (events, nextSince, fetchedAt) =>
     set((state) => {
-      const merged = [...state.events, ...events]
+      const mergedById = new Map(state.events.map((event) => [event.id, event] as const));
+      for (const event of events) {
+        mergedById.set(event.id, event);
+      }
+      const merged = [...mergedById.values()]
         .sort((a, b) => a.at_ms - b.at_ms)
         .slice(-120);
       return {
         events: merged,
-        nextSince,
+        nextSince: Math.max(state.nextSince, nextSince),
         lastFeedSuccessAt: fetchedAt,
         status: deriveStatus(merged, fetchedAt),
       };

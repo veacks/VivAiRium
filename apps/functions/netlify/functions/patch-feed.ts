@@ -1,5 +1,5 @@
 import type { Handler } from "@netlify/functions";
-import { patchLog } from "./_store";
+import { patchLog } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   const cursorParam = event.queryStringParameters?.cursor ?? "0";
@@ -10,8 +10,10 @@ export const handler: Handler = async (event) => {
 
   return {
     statusCode: 200,
-    headers: { "content-type": "application/json" },
+    headers: {
+      "cache-control": "no-store",
+      "content-type": "application/json",
+    },
     body: JSON.stringify({ patches, next_cursor })
   };
 };
-

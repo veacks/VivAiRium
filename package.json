@@ -1,0 +1,12 @@
+{
+  "name": "vivairium",
+  "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "dev": "pnpm -C apps/web dev",
+    "build": "pnpm -r --filter ./apps/web build && pnpm -r --filter ./apps/functions build",
+    "typecheck": "pnpm -r typecheck",
+    "orchestrator:sync": "uv sync --directory apps/orchestrator",
+    "orchestrator:run": "uv run --directory apps/orchestrator vivairium-orchestrator"
+  }
+}

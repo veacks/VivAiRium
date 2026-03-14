@@ -1,0 +1,63 @@
+# Dependencies
+node_modules
+.pnpm-store
+jspm_packages
+typings
+
+# Build and Production
+dist
+build
+.netlify
+out
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Environment and Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+apps/orchestrator/.venv
+apps/orchestrator/__pycache__
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS Specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Tests
+coverage/
+.nyc_output
+
+# Misc
+.cache/
+.eslintcache
+.stylelintcache
+

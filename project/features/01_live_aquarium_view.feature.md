@@ -23,3 +23,9 @@
 - Given the viewer opens the app on desktop
 - When the viewer drags or zooms in the aquarium viewport
 - Then the camera orbits around the aquarium without resetting the simulation
+
+## Scenario F01-S05: Runtime budgets protect the renderer
+
+- Given the aquarium keeps receiving new entities and evolutions
+- When the live view keeps running
+- Then the world entity count and visible vertex load stay within fixed runtime budgets

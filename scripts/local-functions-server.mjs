@@ -7,6 +7,7 @@ const handlerModuleUrls = {
   "activity-event": new URL("../apps/functions/netlify/functions/activity-event.ts", import.meta.url),
   "activity-feed": new URL("../apps/functions/netlify/functions/activity-feed.ts", import.meta.url),
   "deploy-webhook": new URL("../apps/functions/netlify/functions/deploy-webhook.ts", import.meta.url),
+  "history-feed": new URL("../apps/functions/netlify/functions/history-feed.ts", import.meta.url),
   "human-mood": new URL("../apps/functions/netlify/functions/human-mood.ts", import.meta.url),
   "human-vote": new URL("../apps/functions/netlify/functions/human-vote.ts", import.meta.url),
   "patch-feed": new URL("../apps/functions/netlify/functions/patch-feed.ts", import.meta.url),

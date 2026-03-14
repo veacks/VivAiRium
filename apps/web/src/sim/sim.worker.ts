@@ -1,21 +1,31 @@
 /// <reference lib="webworker" />
-import type { WorldEntity, Evolution, AgentProfile } from "@aquarium/shared/domain";
+import type { AgentProfile, Evolution, TerrainCell, WorldEntity } from "@aquarium/shared/domain";
 import type { WorldPatchEnvelope } from "@aquarium/shared/events";
 import { createInitialWorld, applyWorldPatchEnvelope, stepWorld } from "@aquarium/sim/world";
 
 type InMsg =
   | { type: "patch.apply"; envelope: WorldPatchEnvelope }
+  | { type: "patch.batch.apply"; envelopes: WorldPatchEnvelope[] }
   | { type: "tick.configure"; hz: number }
-  | { type: "snapshot.request" };
+  | { type: "snapshot.request" }
+  | { type: "world.reset" };
 
 type OutMsg =
-  | { type: "snapshot"; now_ms: number; entities: WorldEntity[]; evolutions: Evolution[]; agents: AgentProfile[]; tickHz: number }
+  | {
+      type: "snapshot";
+      now_ms: number;
+      entities: WorldEntity[];
+      evolutions: Evolution[];
+      terrain: TerrainCell[];
+      agents: AgentProfile[];
+      tickHz: number;
+    }
   | { type: "feedback.batch"; at_ms: number; feedback: unknown[] };
 
 let tickHz = 60;
 let tickHandle: number | null = null;
 
-const world = createInitialWorld();
+let world = createInitialWorld();
 
 function emitSnapshot() {
   postMessage({
@@ -23,13 +33,14 @@ function emitSnapshot() {
     now_ms: world.now_ms,
     entities: [...world.entities.values()],
     evolutions: [...world.evolutions.values()],
+    terrain: [...world.terrain.values()],
     agents: [...world.agents.values()],
-    tickHz
+    tickHz,
   } satisfies OutMsg);
 }
 
 function step() {
-  stepWorld(world, performance.now());
+  stepWorld(world, Date.now());
   emitSnapshot();
 }
 
@@ -55,10 +66,20 @@ self.onmessage = (e: MessageEvent<InMsg>) => {
     emitSnapshot();
     return;
   }
+  if (msg.type === "world.reset") {
+    world = createInitialWorld();
+    emitSnapshot();
+    return;
+  }
   if (msg.type === "patch.apply") {
     applyWorldPatchEnvelope(world, msg.envelope);
     emitSnapshot();
     return;
   }
+  if (msg.type === "patch.batch.apply") {
+    for (const envelope of msg.envelopes) {
+      applyWorldPatchEnvelope(world, envelope);
+    }
+    emitSnapshot();
+  }
 };
-

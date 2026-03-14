@@ -1,0 +1,1878 @@
+[
+  {
+    "species_id": "species_plant_marsh_filter_10_seed",
+    "lineage": "Humus-marsh_filter",
+    "label": "Humus Crown",
+    "stored_at_ms": 1773508617320,
+    "payload": {
+      "species_id": "species_plant_marsh_filter_10_seed",
+      "lineage": "Humus-marsh_filter",
+      "label": "Humus Crown",
+      "geometry": {
+        "asset_id": "geo_marsh_filter_10_seed",
+        "generator": "plate",
+        "profile": [
+          0.298,
+          0.423,
+          0.678,
+          0.564,
+          0.269,
+          0.768,
+          0.869
+        ],
+        "radial_segments": 12,
+        "rings": 14,
+        "twist": -0.44,
+        "flare": 0.42,
+        "asymmetry": 0.26,
+        "canopy": 0.28
+      },
+      "texture": {
+        "asset_id": "tex_marsh_filter_10_seed",
+        "generator": "strata",
+        "palette": [
+          "#1b3f35",
+          "#5fc490",
+          "#c7ffd5"
+        ],
+        "bands": 8,
+        "spots": 7,
+        "grain": 0.52,
+        "contrast": 0.58,
+        "emissive_bias": 0.66
+      },
+      "behavior": {
+        "asset_id": "beh_marsh_filter_10_seed",
+        "pattern": "heliotrope",
+        "tempo": 0.54,
+        "reach": 1.09,
+        "aggression": 0.28,
+        "cohesion": 0.46,
+        "adaptability": 0.64
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.72,
+        "shade_cast": 0.36,
+        "territory_radius": 4.4,
+        "terrain_affinity": "loam",
+        "mobility": 0.08,
+        "resilience": 0.62
+      },
+      "reasoning": [
+        "focus=marsh_filter",
+        "terrain_affinity=loam",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_sun_spire_10_target",
+    "lineage": "Humus-sun_spire",
+    "label": "Humus Veil",
+    "stored_at_ms": 1773508617378,
+    "payload": {
+      "species_id": "species_plant_sun_spire_10_target",
+      "lineage": "Humus-sun_spire",
+      "label": "Humus Veil",
+      "geometry": {
+        "asset_id": "geo_sun_spire_10_target",
+        "generator": "canopy",
+        "profile": [
+          0.474,
+          0.61,
+          0.4,
+          0.42,
+          0.784,
+          0.712,
+          0.181
+        ],
+        "radial_segments": 8,
+        "rings": 10,
+        "twist": -1.8,
+        "flare": 1.08,
+        "asymmetry": 0.32,
+        "canopy": 0.97
+      },
+      "texture": {
+        "asset_id": "tex_sun_spire_10_target",
+        "generator": "veins",
+        "palette": [
+          "#225e37",
+          "#7bcf5e",
+          "#d8ff8e"
+        ],
+        "bands": 5,
+        "spots": 10,
+        "grain": 0.16,
+        "contrast": 0.32,
+        "emissive_bias": 0.33
+      },
+      "behavior": {
+        "asset_id": "beh_sun_spire_10_target",
+        "pattern": "heliotrope",
+        "tempo": 0.5,
+        "reach": 0.93,
+        "aggression": 0.12,
+        "cohesion": 0.22,
+        "adaptability": 0.57
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.96,
+        "shade_cast": 0.69,
+        "territory_radius": 2.2,
+        "terrain_affinity": "loam",
+        "mobility": 0.44,
+        "resilience": 0.42
+      },
+      "reasoning": [
+        "focus=sun_spire",
+        "terrain_affinity=loam",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_ridge_pack_11_seed",
+    "lineage": "Marsh-ridge_pack",
+    "label": "Marsh Runner",
+    "stored_at_ms": 1773508621466,
+    "payload": {
+      "species_id": "species_animal_ridge_pack_11_seed",
+      "lineage": "Marsh-ridge_pack",
+      "label": "Marsh Runner",
+      "geometry": {
+        "asset_id": "geo_ridge_pack_11_seed",
+        "generator": "spine",
+        "profile": [
+          0.256,
+          0.572,
+          0.634,
+          0.313,
+          0.56,
+          0.86,
+          0.646
+        ],
+        "radial_segments": 8,
+        "rings": 10,
+        "twist": 0.32,
+        "flare": 0.54,
+        "asymmetry": 0.38,
+        "canopy": 0.37
+      },
+      "texture": {
+        "asset_id": "tex_ridge_pack_11_seed",
+        "generator": "bands",
+        "palette": [
+          "#2e2b34",
+          "#8a667a",
+          "#ffd19b"
+        ],
+        "bands": 7,
+        "spots": 14,
+        "grain": 0.16,
+        "contrast": 0.84,
+        "emissive_bias": 0.55
+      },
+      "behavior": {
+        "asset_id": "beh_ridge_pack_11_seed",
+        "pattern": "territorial_pack",
+        "tempo": 1.16,
+        "reach": 1.68,
+        "aggression": 0.92,
+        "cohesion": 0.7,
+        "adaptability": 0.86
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.36,
+        "shade_cast": 0.19,
+        "territory_radius": 9.8,
+        "terrain_affinity": "marsh",
+        "mobility": 0.64,
+        "resilience": 0.82
+      },
+      "reasoning": [
+        "focus=ridge_pack",
+        "terrain_affinity=marsh",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_ridge_pack_11_target",
+    "lineage": "Marsh-ridge_pack",
+    "label": "Marsh Stalker",
+    "stored_at_ms": 1773508621532,
+    "payload": {
+      "species_id": "species_animal_ridge_pack_11_target",
+      "lineage": "Marsh-ridge_pack",
+      "label": "Marsh Stalker",
+      "geometry": {
+        "asset_id": "geo_ridge_pack_11_target",
+        "generator": "spine",
+        "profile": [
+          0.555,
+          0.508,
+          0.21,
+          0.639,
+          0.774,
+          0.433,
+          0.547
+        ],
+        "radial_segments": 11,
+        "rings": 13,
+        "twist": -1.04,
+        "flare": 0.72,
+        "asymmetry": 0.44,
+        "canopy": 0.7
+      },
+      "texture": {
+        "asset_id": "tex_ridge_pack_11_target",
+        "generator": "bands",
+        "palette": [
+          "#2e2b34",
+          "#8a667a",
+          "#ffd19b"
+        ],
+        "bands": 4,
+        "spots": 7,
+        "grain": 0.43,
+        "contrast": 0.58,
+        "emissive_bias": 0.22
+      },
+      "behavior": {
+        "asset_id": "beh_ridge_pack_11_target",
+        "pattern": "territorial_pack",
+        "tempo": 1.12,
+        "reach": 1.52,
+        "aggression": 0.76,
+        "cohesion": 0.46,
+        "adaptability": 0.79
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.28,
+        "shade_cast": 0.08,
+        "territory_radius": 7.6,
+        "terrain_affinity": "marsh",
+        "mobility": 0.52,
+        "resilience": 0.62
+      },
+      "reasoning": [
+        "focus=ridge_pack",
+        "terrain_affinity=marsh",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_sun_spire_12_seed",
+    "lineage": "Obsidian-sun_spire",
+    "label": "Obsidian Kelp",
+    "stored_at_ms": 1773508625620,
+    "payload": {
+      "species_id": "species_plant_sun_spire_12_seed",
+      "lineage": "Obsidian-sun_spire",
+      "label": "Obsidian Kelp",
+      "geometry": {
+        "asset_id": "geo_sun_spire_12_seed",
+        "generator": "canopy",
+        "profile": [
+          0.43,
+          0.619,
+          0.472,
+          0.333,
+          0.753,
+          0.775,
+          0.301
+        ],
+        "radial_segments": 11,
+        "rings": 13,
+        "twist": -0.82,
+        "flare": 0.66,
+        "asymmetry": 0.2,
+        "canopy": 0.46
+      },
+      "texture": {
+        "asset_id": "tex_sun_spire_12_seed",
+        "generator": "veins",
+        "palette": [
+          "#225e37",
+          "#7bcf5e",
+          "#d8ff8e"
+        ],
+        "bands": 6,
+        "spots": 11,
+        "grain": 0.43,
+        "contrast": 0.45,
+        "emissive_bias": 0.44
+      },
+      "behavior": {
+        "asset_id": "beh_sun_spire_12_seed",
+        "pattern": "heliotrope",
+        "tempo": 0.43,
+        "reach": 0.77,
+        "aggression": 0.2,
+        "cohesion": 0.34,
+        "adaptability": 0.53
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.88,
+        "shade_cast": 0.58,
+        "territory_radius": 3.3,
+        "terrain_affinity": "basalt",
+        "mobility": 0.32,
+        "resilience": 0.52
+      },
+      "reasoning": [
+        "focus=sun_spire",
+        "terrain_affinity=basalt",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_reef_bloom_12_target",
+    "lineage": "Obsidian-reef_bloom",
+    "label": "Obsidian Spire",
+    "stored_at_ms": 1773508625696,
+    "payload": {
+      "species_id": "species_plant_reef_bloom_12_target",
+      "lineage": "Obsidian-reef_bloom",
+      "label": "Obsidian Spire",
+      "geometry": {
+        "asset_id": "geo_reef_bloom_12_target",
+        "generator": "canopy",
+        "profile": [
+          0.537,
+          0.32,
+          0.453,
+          0.738,
+          0.609,
+          0.272,
+          0.816
+        ],
+        "radial_segments": 14,
+        "rings": 9,
+        "twist": -0.28,
+        "flare": 0.84,
+        "asymmetry": 0.56,
+        "canopy": 0.79
+      },
+      "texture": {
+        "asset_id": "tex_reef_bloom_12_target",
+        "generator": "spots",
+        "palette": [
+          "#1f3a50",
+          "#2aa8a5",
+          "#85ffe1"
+        ],
+        "bands": 9,
+        "spots": 14,
+        "grain": 0.7,
+        "contrast": 0.84,
+        "emissive_bias": 0.77
+      },
+      "behavior": {
+        "asset_id": "beh_reef_bloom_12_target",
+        "pattern": "canopy_wrestle",
+        "tempo": 0.94,
+        "reach": 1.57,
+        "aggression": 0.44,
+        "cohesion": 0.7,
+        "adaptability": 1.01
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.8,
+        "shade_cast": 0.47,
+        "territory_radius": 6.6,
+        "terrain_affinity": "basalt",
+        "mobility": 0.2,
+        "resilience": 0.82
+      },
+      "reasoning": [
+        "focus=reef_bloom",
+        "terrain_affinity=basalt",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_burrow_clan_13_seed",
+    "lineage": "Brine-burrow_clan",
+    "label": "Brine Pack",
+    "stored_at_ms": 1773508629778,
+    "payload": {
+      "species_id": "species_animal_burrow_clan_13_seed",
+      "lineage": "Brine-burrow_clan",
+      "label": "Brine Pack",
+      "geometry": {
+        "asset_id": "geo_burrow_clan_13_seed",
+        "generator": "shell",
+        "profile": [
+          0.539,
+          0.552,
+          0.233,
+          0.579,
+          0.795,
+          0.534,
+          0.435
+        ],
+        "radial_segments": 14,
+        "rings": 9,
+        "twist": -0.06,
+        "flare": 0.78,
+        "asymmetry": 0.32,
+        "canopy": 0.55
+      },
+      "texture": {
+        "asset_id": "tex_burrow_clan_13_seed",
+        "generator": "bands",
+        "palette": [
+          "#3f2d20",
+          "#a77d5a",
+          "#f3d6b1"
+        ],
+        "bands": 5,
+        "spots": 8,
+        "grain": 0.7,
+        "contrast": 0.71,
+        "emissive_bias": 0.33
+      },
+      "behavior": {
+        "asset_id": "beh_burrow_clan_13_seed",
+        "pattern": "burrower",
+        "tempo": 1.05,
+        "reach": 1.36,
+        "aggression": 0.66,
+        "cohesion": 0.58,
+        "adaptability": 0.75
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.52,
+        "shade_cast": 0.41,
+        "territory_radius": 8.7,
+        "terrain_affinity": "reef",
+        "mobility": 0.88,
+        "resilience": 0.72
+      },
+      "reasoning": [
+        "focus=burrow_clan",
+        "terrain_affinity=reef",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_territory_stalker_13_target",
+    "lineage": "Brine-territory_stalker",
+    "label": "Brine Burrower",
+    "stored_at_ms": 1773508629837,
+    "payload": {
+      "species_id": "species_animal_territory_stalker_13_target",
+      "lineage": "Brine-territory_stalker",
+      "label": "Brine Burrower",
+      "geometry": {
+        "asset_id": "geo_territory_stalker_13_target",
+        "generator": "crest",
+        "profile": [
+          0.427,
+          0.265,
+          0.624,
+          0.691,
+          0.332,
+          0.593,
+          0.92
+        ],
+        "radial_segments": 10,
+        "rings": 12,
+        "twist": -1.42,
+        "flare": 0.96,
+        "asymmetry": 0.38,
+        "canopy": 0.88
+      },
+      "texture": {
+        "asset_id": "tex_territory_stalker_13_target",
+        "generator": "territory",
+        "palette": [
+          "#1d2c4f",
+          "#4b82ff",
+          "#9dd8ff"
+        ],
+        "bands": 8,
+        "spots": 11,
+        "grain": 0.34,
+        "contrast": 0.45,
+        "emissive_bias": 0.66
+      },
+      "behavior": {
+        "asset_id": "beh_territory_stalker_13_target",
+        "pattern": "territorial_pack",
+        "tempo": 1.01,
+        "reach": 2.16,
+        "aggression": 0.68,
+        "cohesion": 0.34,
+        "adaptability": 0.68
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.44,
+        "shade_cast": 0.3,
+        "territory_radius": 6.5,
+        "terrain_affinity": "reef",
+        "mobility": 0.76,
+        "resilience": 0.52
+      },
+      "reasoning": [
+        "focus=territory_stalker",
+        "terrain_affinity=reef",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_sun_spire_0_seed",
+    "lineage": "Canopy-sun_spire",
+    "label": "Canopy Crown",
+    "stored_at_ms": 1773506226634,
+    "payload": {
+      "species_id": "species_plant_sun_spire_0_seed",
+      "lineage": "Canopy-sun_spire",
+      "label": "Canopy Crown",
+      "geometry": {
+        "asset_id": "geo_sun_spire_0_seed",
+        "generator": "canopy",
+        "profile": [
+          0.453,
+          0.616,
+          0.438,
+          0.376,
+          0.77,
+          0.746,
+          0.241
+        ],
+        "radial_segments": 10,
+        "rings": 12,
+        "twist": -0.44,
+        "flare": 0.66,
+        "asymmetry": 0.26,
+        "canopy": 0.46
+      },
+      "texture": {
+        "asset_id": "tex_sun_spire_0_seed",
+        "generator": "veins",
+        "palette": [
+          "#225e37",
+          "#7bcf5e",
+          "#d8ff8e"
+        ],
+        "bands": 6,
+        "spots": 7,
+        "grain": 0.34,
+        "contrast": 0.58,
+        "emissive_bias": 0.44
+      },
+      "behavior": {
+        "asset_id": "beh_sun_spire_0_seed",
+        "pattern": "heliotrope",
+        "tempo": 0.54,
+        "reach": 0.77,
+        "aggression": 0.28,
+        "cohesion": 0.46,
+        "adaptability": 0.64
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.88,
+        "shade_cast": 0.58,
+        "territory_radius": 4.4,
+        "terrain_affinity": "loam",
+        "mobility": 0.32,
+        "resilience": 0.62
+      },
+      "reasoning": [
+        "focus=sun_spire",
+        "terrain_affinity=loam",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_reef_bloom_0_target",
+    "lineage": "Canopy-reef_bloom",
+    "label": "Canopy Veil",
+    "stored_at_ms": 1773506226694,
+    "payload": {
+      "species_id": "species_plant_reef_bloom_0_target",
+      "lineage": "Canopy-reef_bloom",
+      "label": "Canopy Veil",
+      "geometry": {
+        "asset_id": "geo_reef_bloom_0_target",
+        "generator": "canopy",
+        "profile": [
+          0.526,
+          0.285,
+          0.486,
+          0.74,
+          0.571,
+          0.326,
+          0.845
+        ],
+        "radial_segments": 13,
+        "rings": 8,
+        "twist": -1.8,
+        "flare": 0.84,
+        "asymmetry": 0.32,
+        "canopy": 0.79
+      },
+      "texture": {
+        "asset_id": "tex_reef_bloom_0_target",
+        "generator": "spots",
+        "palette": [
+          "#1f3a50",
+          "#2aa8a5",
+          "#85ffe1"
+        ],
+        "bands": 9,
+        "spots": 10,
+        "grain": 0.61,
+        "contrast": 0.32,
+        "emissive_bias": 0.77
+      },
+      "behavior": {
+        "asset_id": "beh_reef_bloom_0_target",
+        "pattern": "canopy_wrestle",
+        "tempo": 0.5,
+        "reach": 1.57,
+        "aggression": 0.12,
+        "cohesion": 0.22,
+        "adaptability": 0.57
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.8,
+        "shade_cast": 0.47,
+        "territory_radius": 2.2,
+        "terrain_affinity": "loam",
+        "mobility": 0.2,
+        "resilience": 0.42
+      },
+      "reasoning": [
+        "focus=reef_bloom",
+        "terrain_affinity=loam",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_burrow_clan_1_seed",
+    "lineage": "Fen-burrow_clan",
+    "label": "Fen Runner",
+    "stored_at_ms": 1773506230780,
+    "payload": {
+      "species_id": "species_animal_burrow_clan_1_seed",
+      "lineage": "Fen-burrow_clan",
+      "label": "Fen Runner",
+      "geometry": {
+        "asset_id": "geo_burrow_clan_1_seed",
+        "generator": "shell",
+        "profile": [
+          0.548,
+          0.531,
+          0.192,
+          0.61,
+          0.787,
+          0.486,
+          0.491
+        ],
+        "radial_segments": 13,
+        "rings": 8,
+        "twist": 0.32,
+        "flare": 0.78,
+        "asymmetry": 0.38,
+        "canopy": 0.55
+      },
+      "texture": {
+        "asset_id": "tex_burrow_clan_1_seed",
+        "generator": "bands",
+        "palette": [
+          "#3f2d20",
+          "#a77d5a",
+          "#f3d6b1"
+        ],
+        "bands": 5,
+        "spots": 14,
+        "grain": 0.61,
+        "contrast": 0.84,
+        "emissive_bias": 0.33
+      },
+      "behavior": {
+        "asset_id": "beh_burrow_clan_1_seed",
+        "pattern": "burrower",
+        "tempo": 1.16,
+        "reach": 1.36,
+        "aggression": 0.74,
+        "cohesion": 0.7,
+        "adaptability": 0.86
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.52,
+        "shade_cast": 0.41,
+        "territory_radius": 9.8,
+        "terrain_affinity": "marsh",
+        "mobility": 0.88,
+        "resilience": 0.82
+      },
+      "reasoning": [
+        "focus=burrow_clan",
+        "terrain_affinity=marsh",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_territory_stalker_1_target",
+    "lineage": "Fen-territory_stalker",
+    "label": "Fen Stalker",
+    "stored_at_ms": 1773506230840,
+    "payload": {
+      "species_id": "species_animal_territory_stalker_1_target",
+      "lineage": "Fen-territory_stalker",
+      "label": "Fen Stalker",
+      "geometry": {
+        "asset_id": "geo_territory_stalker_1_target",
+        "generator": "crest",
+        "profile": [
+          0.402,
+          0.3,
+          0.641,
+          0.67,
+          0.283,
+          0.635,
+          0.919
+        ],
+        "radial_segments": 9,
+        "rings": 11,
+        "twist": -1.04,
+        "flare": 0.96,
+        "asymmetry": 0.44,
+        "canopy": 0.88
+      },
+      "texture": {
+        "asset_id": "tex_territory_stalker_1_target",
+        "generator": "territory",
+        "palette": [
+          "#1d2c4f",
+          "#4b82ff",
+          "#9dd8ff"
+        ],
+        "bands": 8,
+        "spots": 7,
+        "grain": 0.25,
+        "contrast": 0.58,
+        "emissive_bias": 0.66
+      },
+      "behavior": {
+        "asset_id": "beh_territory_stalker_1_target",
+        "pattern": "territorial_pack",
+        "tempo": 1.12,
+        "reach": 2.16,
+        "aggression": 0.76,
+        "cohesion": 0.46,
+        "adaptability": 0.79
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.44,
+        "shade_cast": 0.3,
+        "territory_radius": 7.6,
+        "terrain_affinity": "marsh",
+        "mobility": 0.76,
+        "resilience": 0.62
+      },
+      "reasoning": [
+        "focus=territory_stalker",
+        "terrain_affinity=marsh",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_basalt_spine_2_seed",
+    "lineage": "Basalt-basalt_spine",
+    "label": "Basalt Kelp",
+    "stored_at_ms": 1773508584101,
+    "payload": {
+      "species_id": "species_plant_basalt_spine_2_seed",
+      "lineage": "Basalt-basalt_spine",
+      "label": "Basalt Kelp",
+      "geometry": {
+        "asset_id": "geo_basalt_spine_2_seed",
+        "generator": "spine",
+        "profile": [
+          0.547,
+          0.355,
+          0.416,
+          0.731,
+          0.646,
+          0.214,
+          0.782
+        ],
+        "radial_segments": 9,
+        "rings": 11,
+        "twist": -0.82,
+        "flare": 0.42,
+        "asymmetry": 0.2,
+        "canopy": 0.28
+      },
+      "texture": {
+        "asset_id": "tex_basalt_spine_2_seed",
+        "generator": "bands",
+        "palette": [
+          "#332c29",
+          "#6d7443",
+          "#c8e368"
+        ],
+        "bands": 4,
+        "spots": 11,
+        "grain": 0.25,
+        "contrast": 0.45,
+        "emissive_bias": 0.22
+      },
+      "behavior": {
+        "asset_id": "beh_basalt_spine_2_seed",
+        "pattern": "ridge_runner",
+        "tempo": 0.43,
+        "reach": 0.45,
+        "aggression": 0.2,
+        "cohesion": 0.34,
+        "adaptability": 0.53
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.72,
+        "shade_cast": 0.36,
+        "territory_radius": 3.3,
+        "terrain_affinity": "basalt",
+        "mobility": 0.08,
+        "resilience": 0.52
+      },
+      "reasoning": [
+        "focus=basalt_spine",
+        "terrain_affinity=basalt",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_canopy_duelist_2_target",
+    "lineage": "Basalt-canopy_duelist",
+    "label": "Basalt Spire",
+    "stored_at_ms": 1773508584160,
+    "payload": {
+      "species_id": "species_plant_canopy_duelist_2_target",
+      "lineage": "Basalt-canopy_duelist",
+      "label": "Basalt Spire",
+      "geometry": {
+        "asset_id": "geo_canopy_duelist_2_target",
+        "generator": "crest",
+        "profile": [
+          0.221,
+          0.493,
+          0.676,
+          0.472,
+          0.393,
+          0.825,
+          0.799
+        ],
+        "radial_segments": 12,
+        "rings": 14,
+        "twist": -0.28,
+        "flare": 1.08,
+        "asymmetry": 0.56,
+        "canopy": 0.97
+      },
+      "texture": {
+        "asset_id": "tex_canopy_duelist_2_target",
+        "generator": "territory",
+        "palette": [
+          "#173f2d",
+          "#3da96f",
+          "#8df8b7"
+        ],
+        "bands": 7,
+        "spots": 14,
+        "grain": 0.52,
+        "contrast": 0.84,
+        "emissive_bias": 0.55
+      },
+      "behavior": {
+        "asset_id": "beh_canopy_duelist_2_target",
+        "pattern": "canopy_wrestle",
+        "tempo": 0.94,
+        "reach": 1.25,
+        "aggression": 0.62,
+        "cohesion": 0.7,
+        "adaptability": 1.01
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.96,
+        "shade_cast": 0.69,
+        "territory_radius": 6.6,
+        "terrain_affinity": "basalt",
+        "mobility": 0.44,
+        "resilience": 0.82
+      },
+      "reasoning": [
+        "focus=canopy_duelist",
+        "terrain_affinity=basalt",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_reef_skimmer_3_seed",
+    "lineage": "Coral-reef_skimmer",
+    "label": "Coral Pack",
+    "stored_at_ms": 1773508588253,
+    "payload": {
+      "species_id": "species_animal_reef_skimmer_3_seed",
+      "lineage": "Coral-reef_skimmer",
+      "label": "Coral Pack",
+      "geometry": {
+        "asset_id": "geo_reef_skimmer_3_seed",
+        "generator": "shell",
+        "profile": [
+          0.45,
+          0.228,
+          0.603,
+          0.708,
+          0.383,
+          0.545,
+          0.916
+        ],
+        "radial_segments": 12,
+        "rings": 14,
+        "twist": -0.06,
+        "flare": 0.54,
+        "asymmetry": 0.32,
+        "canopy": 0.37
+      },
+      "texture": {
+        "asset_id": "tex_reef_skimmer_3_seed",
+        "generator": "spots",
+        "palette": [
+          "#182d55",
+          "#3d9cff",
+          "#baf4ff"
+        ],
+        "bands": 9,
+        "spots": 8,
+        "grain": 0.52,
+        "contrast": 0.71,
+        "emissive_bias": 0.77
+      },
+      "behavior": {
+        "asset_id": "beh_reef_skimmer_3_seed",
+        "pattern": "ridge_runner",
+        "tempo": 1.05,
+        "reach": 2,
+        "aggression": 0.66,
+        "cohesion": 0.58,
+        "adaptability": 0.75
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.36,
+        "shade_cast": 0.19,
+        "territory_radius": 8.7,
+        "terrain_affinity": "reef",
+        "mobility": 0.64,
+        "resilience": 0.72
+      },
+      "reasoning": [
+        "focus=reef_skimmer",
+        "terrain_affinity=reef",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_burrow_clan_3_target",
+    "lineage": "Coral-burrow_clan",
+    "label": "Coral Burrower",
+    "stored_at_ms": 1773508588323,
+    "payload": {
+      "species_id": "species_animal_burrow_clan_3_target",
+      "lineage": "Coral-burrow_clan",
+      "label": "Coral Burrower",
+      "geometry": {
+        "asset_id": "geo_burrow_clan_3_target",
+        "generator": "shell",
+        "profile": [
+          0.331,
+          0.605,
+          0.582,
+          0.198,
+          0.653,
+          0.847,
+          0.518
+        ],
+        "radial_segments": 8,
+        "rings": 10,
+        "twist": -1.42,
+        "flare": 0.72,
+        "asymmetry": 0.38,
+        "canopy": 0.7
+      },
+      "texture": {
+        "asset_id": "tex_burrow_clan_3_target",
+        "generator": "bands",
+        "palette": [
+          "#3f2d20",
+          "#a77d5a",
+          "#f3d6b1"
+        ],
+        "bands": 6,
+        "spots": 11,
+        "grain": 0.16,
+        "contrast": 0.45,
+        "emissive_bias": 0.44
+      },
+      "behavior": {
+        "asset_id": "beh_burrow_clan_3_target",
+        "pattern": "burrower",
+        "tempo": 1.01,
+        "reach": 1.84,
+        "aggression": 0.5,
+        "cohesion": 0.34,
+        "adaptability": 0.68
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.28,
+        "shade_cast": 0.08,
+        "territory_radius": 6.5,
+        "terrain_affinity": "reef",
+        "mobility": 0.52,
+        "resilience": 0.52
+      },
+      "reasoning": [
+        "focus=burrow_clan",
+        "terrain_affinity=reef",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_marsh_filter_4_seed",
+    "lineage": "Dust-marsh_filter",
+    "label": "Dust Veil",
+    "stored_at_ms": 1773508592410,
+    "payload": {
+      "species_id": "species_plant_marsh_filter_4_seed",
+      "lineage": "Dust-marsh_filter",
+      "label": "Dust Veil",
+      "geometry": {
+        "asset_id": "geo_marsh_filter_4_seed",
+        "generator": "plate",
+        "profile": [
+          0.283,
+          0.438,
+          0.679,
+          0.548,
+          0.293,
+          0.781,
+          0.858
+        ],
+        "radial_segments": 8,
+        "rings": 10,
+        "twist": -1.2,
+        "flare": 0.66,
+        "asymmetry": 0.14,
+        "canopy": 0.46
+      },
+      "texture": {
+        "asset_id": "tex_marsh_filter_4_seed",
+        "generator": "strata",
+        "palette": [
+          "#1b3f35",
+          "#5fc490",
+          "#c7ffd5"
+        ],
+        "bands": 8,
+        "spots": 5,
+        "grain": 0.16,
+        "contrast": 0.32,
+        "emissive_bias": 0.66
+      },
+      "behavior": {
+        "asset_id": "beh_marsh_filter_4_seed",
+        "pattern": "heliotrope",
+        "tempo": 0.32,
+        "reach": 1.09,
+        "aggression": 0.12,
+        "cohesion": 0.22,
+        "adaptability": 0.42
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.88,
+        "shade_cast": 0.58,
+        "territory_radius": 2.2,
+        "terrain_affinity": "dune",
+        "mobility": 0.32,
+        "resilience": 0.42
+      },
+      "reasoning": [
+        "focus=marsh_filter",
+        "terrain_affinity=dune",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_sun_spire_4_target",
+    "lineage": "Dust-sun_spire",
+    "label": "Dust Lattice",
+    "stored_at_ms": 1773508592469,
+    "payload": {
+      "species_id": "species_plant_sun_spire_4_target",
+      "lineage": "Dust-sun_spire",
+      "label": "Dust Lattice",
+      "geometry": {
+        "asset_id": "geo_sun_spire_4_target",
+        "generator": "canopy",
+        "profile": [
+          0.484,
+          0.606,
+          0.382,
+          0.441,
+          0.789,
+          0.694,
+          0.211
+        ],
+        "radial_segments": 11,
+        "rings": 13,
+        "twist": -0.66,
+        "flare": 0.84,
+        "asymmetry": 0.5,
+        "canopy": 0.79
+      },
+      "texture": {
+        "asset_id": "tex_sun_spire_4_target",
+        "generator": "veins",
+        "palette": [
+          "#225e37",
+          "#7bcf5e",
+          "#d8ff8e"
+        ],
+        "bands": 5,
+        "spots": 8,
+        "grain": 0.43,
+        "contrast": 0.71,
+        "emissive_bias": 0.33
+      },
+      "behavior": {
+        "asset_id": "beh_sun_spire_4_target",
+        "pattern": "heliotrope",
+        "tempo": 0.83,
+        "reach": 0.93,
+        "aggression": 0.36,
+        "cohesion": 0.58,
+        "adaptability": 0.9
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.8,
+        "shade_cast": 0.47,
+        "territory_radius": 5.5,
+        "terrain_affinity": "dune",
+        "mobility": 0.2,
+        "resilience": 0.72
+      },
+      "reasoning": [
+        "focus=sun_spire",
+        "terrain_affinity=dune",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_ridge_pack_5_seed",
+    "lineage": "Loam-ridge_pack",
+    "label": "Loam Stalker",
+    "stored_at_ms": 1773508596554,
+    "payload": {
+      "species_id": "species_animal_ridge_pack_5_seed",
+      "lineage": "Loam-ridge_pack",
+      "label": "Loam Stalker",
+      "geometry": {
+        "asset_id": "geo_ridge_pack_5_seed",
+        "generator": "spine",
+        "profile": [
+          0.271,
+          0.58,
+          0.625,
+          0.291,
+          0.58,
+          0.86,
+          0.622
+        ],
+        "radial_segments": 11,
+        "rings": 13,
+        "twist": -0.44,
+        "flare": 0.78,
+        "asymmetry": 0.26,
+        "canopy": 0.55
+      },
+      "texture": {
+        "asset_id": "tex_ridge_pack_5_seed",
+        "generator": "bands",
+        "palette": [
+          "#2e2b34",
+          "#8a667a",
+          "#ffd19b"
+        ],
+        "bands": 7,
+        "spots": 12,
+        "grain": 0.43,
+        "contrast": 0.58,
+        "emissive_bias": 0.55
+      },
+      "behavior": {
+        "asset_id": "beh_ridge_pack_5_seed",
+        "pattern": "territorial_pack",
+        "tempo": 0.94,
+        "reach": 1.68,
+        "aggression": 0.76,
+        "cohesion": 0.46,
+        "adaptability": 0.64
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.52,
+        "shade_cast": 0.41,
+        "territory_radius": 7.6,
+        "terrain_affinity": "loam",
+        "mobility": 0.88,
+        "resilience": 0.62
+      },
+      "reasoning": [
+        "focus=ridge_pack",
+        "terrain_affinity=loam",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_ridge_pack_5_target",
+    "lineage": "Loam-ridge_pack",
+    "label": "Loam Grazer",
+    "stored_at_ms": 1773508596623,
+    "payload": {
+      "species_id": "species_animal_ridge_pack_5_target",
+      "lineage": "Loam-ridge_pack",
+      "label": "Loam Grazer",
+      "geometry": {
+        "asset_id": "geo_ridge_pack_5_target",
+        "generator": "spine",
+        "profile": [
+          0.557,
+          0.495,
+          0.23,
+          0.651,
+          0.767,
+          0.407,
+          0.573
+        ],
+        "radial_segments": 14,
+        "rings": 9,
+        "twist": -1.8,
+        "flare": 0.96,
+        "asymmetry": 0.32,
+        "canopy": 0.88
+      },
+      "texture": {
+        "asset_id": "tex_ridge_pack_5_target",
+        "generator": "bands",
+        "palette": [
+          "#2e2b34",
+          "#8a667a",
+          "#ffd19b"
+        ],
+        "bands": 4,
+        "spots": 5,
+        "grain": 0.7,
+        "contrast": 0.32,
+        "emissive_bias": 0.22
+      },
+      "behavior": {
+        "asset_id": "beh_ridge_pack_5_target",
+        "pattern": "territorial_pack",
+        "tempo": 0.9,
+        "reach": 1.52,
+        "aggression": 0.6,
+        "cohesion": 0.22,
+        "adaptability": 0.57
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.44,
+        "shade_cast": 0.3,
+        "territory_radius": 5.4,
+        "terrain_affinity": "loam",
+        "mobility": 0.76,
+        "resilience": 0.42
+      },
+      "reasoning": [
+        "focus=ridge_pack",
+        "terrain_affinity=loam",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_sun_spire_6_seed",
+    "lineage": "Silt-sun_spire",
+    "label": "Silt Spire",
+    "stored_at_ms": 1773508600714,
+    "payload": {
+      "species_id": "species_plant_sun_spire_6_seed",
+      "lineage": "Silt-sun_spire",
+      "label": "Silt Spire",
+      "geometry": {
+        "asset_id": "geo_sun_spire_6_seed",
+        "generator": "canopy",
+        "profile": [
+          0.442,
+          0.618,
+          0.455,
+          0.355,
+          0.762,
+          0.761,
+          0.271
+        ],
+        "radial_segments": 14,
+        "rings": 9,
+        "twist": 0.32,
+        "flare": 0.42,
+        "asymmetry": 0.38,
+        "canopy": 0.28
+      },
+      "texture": {
+        "asset_id": "tex_sun_spire_6_seed",
+        "generator": "veins",
+        "palette": [
+          "#225e37",
+          "#7bcf5e",
+          "#d8ff8e"
+        ],
+        "bands": 6,
+        "spots": 9,
+        "grain": 0.7,
+        "contrast": 0.84,
+        "emissive_bias": 0.44
+      },
+      "behavior": {
+        "asset_id": "beh_sun_spire_6_seed",
+        "pattern": "heliotrope",
+        "tempo": 0.76,
+        "reach": 0.77,
+        "aggression": 0.44,
+        "cohesion": 0.7,
+        "adaptability": 0.86
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.72,
+        "shade_cast": 0.36,
+        "territory_radius": 6.6,
+        "terrain_affinity": "marsh",
+        "mobility": 0.08,
+        "resilience": 0.82
+      },
+      "reasoning": [
+        "focus=sun_spire",
+        "terrain_affinity=marsh",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_reef_bloom_6_target",
+    "lineage": "Silt-reef_bloom",
+    "label": "Silt Crown",
+    "stored_at_ms": 1773508600771,
+    "payload": {
+      "species_id": "species_plant_reef_bloom_6_target",
+      "lineage": "Silt-reef_bloom",
+      "label": "Silt Crown",
+      "geometry": {
+        "asset_id": "geo_reef_bloom_6_target",
+        "generator": "canopy",
+        "profile": [
+          0.532,
+          0.303,
+          0.47,
+          0.739,
+          0.591,
+          0.299,
+          0.831
+        ],
+        "radial_segments": 10,
+        "rings": 12,
+        "twist": -1.04,
+        "flare": 1.08,
+        "asymmetry": 0.44,
+        "canopy": 0.97
+      },
+      "texture": {
+        "asset_id": "tex_reef_bloom_6_target",
+        "generator": "spots",
+        "palette": [
+          "#1f3a50",
+          "#2aa8a5",
+          "#85ffe1"
+        ],
+        "bands": 9,
+        "spots": 12,
+        "grain": 0.34,
+        "contrast": 0.58,
+        "emissive_bias": 0.77
+      },
+      "behavior": {
+        "asset_id": "beh_reef_bloom_6_target",
+        "pattern": "canopy_wrestle",
+        "tempo": 0.72,
+        "reach": 1.57,
+        "aggression": 0.28,
+        "cohesion": 0.46,
+        "adaptability": 0.79
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.96,
+        "shade_cast": 0.69,
+        "territory_radius": 4.4,
+        "terrain_affinity": "marsh",
+        "mobility": 0.44,
+        "resilience": 0.62
+      },
+      "reasoning": [
+        "focus=reef_bloom",
+        "terrain_affinity=marsh",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_burrow_clan_7_seed",
+    "lineage": "Ash-burrow_clan",
+    "label": "Ash Burrower",
+    "stored_at_ms": 1773508604859,
+    "payload": {
+      "species_id": "species_animal_burrow_clan_7_seed",
+      "lineage": "Ash-burrow_clan",
+      "label": "Ash Burrower",
+      "geometry": {
+        "asset_id": "geo_burrow_clan_7_seed",
+        "generator": "shell",
+        "profile": [
+          0.544,
+          0.542,
+          0.213,
+          0.595,
+          0.792,
+          0.51,
+          0.463
+        ],
+        "radial_segments": 10,
+        "rings": 12,
+        "twist": -0.82,
+        "flare": 0.54,
+        "asymmetry": 0.2,
+        "canopy": 0.37
+      },
+      "texture": {
+        "asset_id": "tex_burrow_clan_7_seed",
+        "generator": "bands",
+        "palette": [
+          "#3f2d20",
+          "#a77d5a",
+          "#f3d6b1"
+        ],
+        "bands": 5,
+        "spots": 6,
+        "grain": 0.34,
+        "contrast": 0.45,
+        "emissive_bias": 0.33
+      },
+      "behavior": {
+        "asset_id": "beh_burrow_clan_7_seed",
+        "pattern": "burrower",
+        "tempo": 0.83,
+        "reach": 1.36,
+        "aggression": 0.5,
+        "cohesion": 0.34,
+        "adaptability": 0.53
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.36,
+        "shade_cast": 0.19,
+        "territory_radius": 6.5,
+        "terrain_affinity": "basalt",
+        "mobility": 0.64,
+        "resilience": 0.52
+      },
+      "reasoning": [
+        "focus=burrow_clan",
+        "terrain_affinity=basalt",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_territory_stalker_7_target",
+    "lineage": "Ash-territory_stalker",
+    "label": "Ash Runner",
+    "stored_at_ms": 1773508604922,
+    "payload": {
+      "species_id": "species_animal_territory_stalker_7_target",
+      "lineage": "Ash-territory_stalker",
+      "label": "Ash Runner",
+      "geometry": {
+        "asset_id": "geo_territory_stalker_7_target",
+        "generator": "crest",
+        "profile": [
+          0.415,
+          0.282,
+          0.633,
+          0.681,
+          0.307,
+          0.614,
+          0.92
+        ],
+        "radial_segments": 13,
+        "rings": 8,
+        "twist": -0.28,
+        "flare": 0.72,
+        "asymmetry": 0.56,
+        "canopy": 0.7
+      },
+      "texture": {
+        "asset_id": "tex_territory_stalker_7_target",
+        "generator": "territory",
+        "palette": [
+          "#1d2c4f",
+          "#4b82ff",
+          "#9dd8ff"
+        ],
+        "bands": 8,
+        "spots": 9,
+        "grain": 0.61,
+        "contrast": 0.84,
+        "emissive_bias": 0.66
+      },
+      "behavior": {
+        "asset_id": "beh_territory_stalker_7_target",
+        "pattern": "territorial_pack",
+        "tempo": 1.34,
+        "reach": 2.16,
+        "aggression": 0.92,
+        "cohesion": 0.7,
+        "adaptability": 1.01
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.28,
+        "shade_cast": 0.08,
+        "territory_radius": 9.8,
+        "terrain_affinity": "basalt",
+        "mobility": 0.52,
+        "resilience": 0.82
+      },
+      "reasoning": [
+        "focus=territory_stalker",
+        "terrain_affinity=basalt",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_basalt_spine_8_seed",
+    "lineage": "Reef-basalt_spine",
+    "label": "Reef Lattice",
+    "stored_at_ms": 1773508609010,
+    "payload": {
+      "species_id": "species_plant_basalt_spine_8_seed",
+      "lineage": "Reef-basalt_spine",
+      "label": "Reef Lattice",
+      "geometry": {
+        "asset_id": "geo_basalt_spine_8_seed",
+        "generator": "spine",
+        "profile": [
+          0.551,
+          0.371,
+          0.398,
+          0.727,
+          0.662,
+          0.187,
+          0.764
+        ],
+        "radial_segments": 13,
+        "rings": 8,
+        "twist": -0.06,
+        "flare": 0.66,
+        "asymmetry": 0.32,
+        "canopy": 0.46
+      },
+      "texture": {
+        "asset_id": "tex_basalt_spine_8_seed",
+        "generator": "bands",
+        "palette": [
+          "#332c29",
+          "#6d7443",
+          "#c8e368"
+        ],
+        "bands": 4,
+        "spots": 13,
+        "grain": 0.61,
+        "contrast": 0.71,
+        "emissive_bias": 0.22
+      },
+      "behavior": {
+        "asset_id": "beh_basalt_spine_8_seed",
+        "pattern": "ridge_runner",
+        "tempo": 0.65,
+        "reach": 0.45,
+        "aggression": 0.36,
+        "cohesion": 0.58,
+        "adaptability": 0.75
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.88,
+        "shade_cast": 0.58,
+        "territory_radius": 5.5,
+        "terrain_affinity": "reef",
+        "mobility": 0.32,
+        "resilience": 0.72
+      },
+      "reasoning": [
+        "focus=basalt_spine",
+        "terrain_affinity=reef",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_plant_canopy_duelist_8_target",
+    "lineage": "Reef-canopy_duelist",
+    "label": "Reef Kelp",
+    "stored_at_ms": 1773508609077,
+    "payload": {
+      "species_id": "species_plant_canopy_duelist_8_target",
+      "lineage": "Reef-canopy_duelist",
+      "label": "Reef Kelp",
+      "geometry": {
+        "asset_id": "geo_canopy_duelist_8_target",
+        "generator": "crest",
+        "profile": [
+          0.236,
+          0.48,
+          0.678,
+          0.492,
+          0.369,
+          0.816,
+          0.815
+        ],
+        "radial_segments": 9,
+        "rings": 11,
+        "twist": -1.42,
+        "flare": 0.84,
+        "asymmetry": 0.38,
+        "canopy": 0.79
+      },
+      "texture": {
+        "asset_id": "tex_canopy_duelist_8_target",
+        "generator": "territory",
+        "palette": [
+          "#173f2d",
+          "#3da96f",
+          "#8df8b7"
+        ],
+        "bands": 7,
+        "spots": 6,
+        "grain": 0.25,
+        "contrast": 0.45,
+        "emissive_bias": 0.55
+      },
+      "behavior": {
+        "asset_id": "beh_canopy_duelist_8_target",
+        "pattern": "canopy_wrestle",
+        "tempo": 0.61,
+        "reach": 1.25,
+        "aggression": 0.38,
+        "cohesion": 0.34,
+        "adaptability": 0.68
+      },
+      "ecology": {
+        "guild": "plant",
+        "sunlight_demand": 0.8,
+        "shade_cast": 0.47,
+        "territory_radius": 3.3,
+        "terrain_affinity": "reef",
+        "mobility": 0.2,
+        "resilience": 0.52
+      },
+      "reasoning": [
+        "focus=canopy_duelist",
+        "terrain_affinity=reef",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_reef_skimmer_9_seed",
+    "lineage": "Solar-reef_skimmer",
+    "label": "Solar Grazer",
+    "stored_at_ms": 1773508613167,
+    "payload": {
+      "species_id": "species_animal_reef_skimmer_9_seed",
+      "lineage": "Solar-reef_skimmer",
+      "label": "Solar Grazer",
+      "geometry": {
+        "asset_id": "geo_reef_skimmer_9_seed",
+        "generator": "shell",
+        "profile": [
+          0.461,
+          0.21,
+          0.592,
+          0.715,
+          0.406,
+          0.522,
+          0.912
+        ],
+        "radial_segments": 9,
+        "rings": 11,
+        "twist": -1.2,
+        "flare": 0.78,
+        "asymmetry": 0.14,
+        "canopy": 0.55
+      },
+      "texture": {
+        "asset_id": "tex_reef_skimmer_9_seed",
+        "generator": "spots",
+        "palette": [
+          "#182d55",
+          "#3d9cff",
+          "#baf4ff"
+        ],
+        "bands": 9,
+        "spots": 10,
+        "grain": 0.25,
+        "contrast": 0.32,
+        "emissive_bias": 0.77
+      },
+      "behavior": {
+        "asset_id": "beh_reef_skimmer_9_seed",
+        "pattern": "ridge_runner",
+        "tempo": 0.72,
+        "reach": 2,
+        "aggression": 0.42,
+        "cohesion": 0.22,
+        "adaptability": 0.42
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.52,
+        "shade_cast": 0.41,
+        "territory_radius": 5.4,
+        "terrain_affinity": "dune",
+        "mobility": 0.88,
+        "resilience": 0.42
+      },
+      "reasoning": [
+        "focus=reef_skimmer",
+        "terrain_affinity=dune",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  },
+  {
+    "species_id": "species_animal_burrow_clan_9_target",
+    "lineage": "Solar-burrow_clan",
+    "label": "Solar Pack",
+    "stored_at_ms": 1773508613231,
+    "payload": {
+      "species_id": "species_animal_burrow_clan_9_target",
+      "lineage": "Solar-burrow_clan",
+      "label": "Solar Pack",
+      "geometry": {
+        "asset_id": "geo_burrow_clan_9_target",
+        "generator": "shell",
+        "profile": [
+          0.317,
+          0.6,
+          0.593,
+          0.221,
+          0.636,
+          0.852,
+          0.545
+        ],
+        "radial_segments": 12,
+        "rings": 14,
+        "twist": -0.66,
+        "flare": 0.96,
+        "asymmetry": 0.5,
+        "canopy": 0.88
+      },
+      "texture": {
+        "asset_id": "tex_burrow_clan_9_target",
+        "generator": "bands",
+        "palette": [
+          "#3f2d20",
+          "#a77d5a",
+          "#f3d6b1"
+        ],
+        "bands": 6,
+        "spots": 13,
+        "grain": 0.52,
+        "contrast": 0.71,
+        "emissive_bias": 0.44
+      },
+      "behavior": {
+        "asset_id": "beh_burrow_clan_9_target",
+        "pattern": "burrower",
+        "tempo": 1.23,
+        "reach": 1.84,
+        "aggression": 0.66,
+        "cohesion": 0.58,
+        "adaptability": 0.9
+      },
+      "ecology": {
+        "guild": "animal",
+        "sunlight_demand": 0.44,
+        "shade_cast": 0.3,
+        "territory_radius": 8.7,
+        "terrain_affinity": "dune",
+        "mobility": 0.76,
+        "resilience": 0.72
+      },
+      "reasoning": [
+        "focus=burrow_clan",
+        "terrain_affinity=dune",
+        "Target species is designed as a full blueprint: geometry, texture, locomotion, and ecology mutate together."
+      ]
+    }
+  }
+]

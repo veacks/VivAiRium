@@ -6,12 +6,13 @@
 2. See the world already evolving (no “start game”).
 3. Inspect the aquarium with desktop orbit camera controls.
 4. Optionally enter XR mode without resetting the world.
-5. Watch entities emerge and evolve through visible lifecycle stages, shape changes, behavior changes, and shader changes.
-6. Submit votes/tags (human influence) that bias future evolutions.
+5. Watch species races emerge and evolve through visible lifecycle stages, geometry jumps, texture changes, behavior shifts, and terrain adaptation.
+6. Scrub the replay timeline to jump backward in the cached history, then return to the live stream.
+7. Submit votes/tags (human influence) that bias future evolutions.
 
 ## Operator journey (system owner)
 
 1. Deploy via GitHub → Netlify.
 2. Receive deploy webhooks and audit events for patch ingestion/moderation.
 3. Run the orchestrator to generate evolutions and agent mutations.
-4. Monitor patch feed, agent reasoning traces, and feedback events to ensure creator ping-pong works.
+4. Monitor patch feed, replay history, cached species assets, and agent reasoning traces to ensure creator ping-pong works.

@@ -16,3 +16,14 @@
 - Given Netlify or GitHub sends a deploy webhook
 - Then the system records success/failure for auditing
 
+## Scenario F05-S04: Patch and activity history is cached locally
+
+- Given the local functions server ingests patches and activity events
+- When the operator reloads the page or restarts the local stack
+- Then cached history is restored from disk in `cache/evolution-history`
+
+## Scenario F05-S05: The viewer can replay cached world history
+
+- Given cached patch history exists
+- When the viewer selects an older timeline point in the UI
+- Then the world is rebuilt from cached patches up to that point and can return to live mode

@@ -19,6 +19,24 @@ export type WorldPatchEnvelope = {
   patch: unknown;
 };
 
+export type HistoryEntry = {
+  cursor: number;
+  patch_id: PatchId;
+  created_at_ms: number;
+  patch_kind: string;
+  entity_id?: string;
+  evolution_id?: string;
+  species_id?: string;
+  summary: string;
+};
+
+export type HistoryFeedMeta = {
+  total_patches: number;
+  earliest_ms: number | null;
+  latest_ms: number | null;
+  entries: HistoryEntry[];
+};
+
 export type ActivityLevel = "debug" | "info" | "warn" | "error";
 
 export type ActivityEvent = {

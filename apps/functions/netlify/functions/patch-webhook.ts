@@ -1,6 +1,6 @@
 import type { Handler } from "@netlify/functions";
 import type { WorldPatchEnvelope } from "@aquarium/shared/events";
-import { appendActivity, patchLog, seenIdempotency } from "./_store.ts";
+import { appendActivity, appendPatch, seenIdempotency } from "./_store.ts";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
@@ -11,7 +11,7 @@ export const handler: Handler = async (event) => {
   if (seenIdempotency.has(env.idempotency_key)) return { statusCode: 200, body: "OK (deduped)" };
   seenIdempotency.add(env.idempotency_key);
 
-  patchLog.push(env);
+  appendPatch(env);
   appendActivity({
     id: `activity_patch_${env.patch_id}`,
     at_ms: Date.now(),

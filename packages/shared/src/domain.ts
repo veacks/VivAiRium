@@ -8,6 +8,11 @@ export type EntityArchetype = "flora" | "fauna" | "rock" | "structure" | "ambien
 export type EntityShapeKind = "frond" | "pod" | "crystal" | "orb" | "fan";
 export type EntityBehaviorMode = "rooted" | "pulse" | "orbit" | "wander" | "glide";
 export type EntityShaderStyle = "biolume" | "caustic" | "glass" | "ember" | "electric";
+export type TerrainType = "loam" | "reef" | "marsh" | "basalt" | "dune";
+export type SpeciesGuild = "plant" | "animal" | "terrain" | "fungal";
+export type GeometryGenerator = "canopy" | "spine" | "crest" | "shell" | "plate";
+export type TextureGenerator = "veins" | "bands" | "spots" | "strata" | "territory";
+export type BehaviorPattern = "heliotrope" | "canopy_wrestle" | "territorial_pack" | "burrower" | "ridge_runner";
 
 export type EntityShapeProfile = {
   kind: EntityShapeKind;
@@ -33,6 +38,75 @@ export type EntityShaderProfile = {
   fresnel: number;
 };
 
+export type GeometryAsset = {
+  asset_id: string;
+  generator: GeometryGenerator;
+  profile: readonly number[];
+  radial_segments: number;
+  rings: number;
+  twist: number;
+  flare: number;
+  asymmetry: number;
+  canopy: number;
+};
+
+export type TextureAsset = {
+  asset_id: string;
+  generator: TextureGenerator;
+  palette: readonly string[];
+  bands: number;
+  spots: number;
+  grain: number;
+  contrast: number;
+  emissive_bias: number;
+};
+
+export type BehaviorAsset = {
+  asset_id: string;
+  pattern: BehaviorPattern;
+  tempo: number;
+  reach: number;
+  aggression: number;
+  cohesion: number;
+  adaptability: number;
+};
+
+export type EcologyTraits = {
+  guild: SpeciesGuild;
+  sunlight_demand: number;
+  shade_cast: number;
+  territory_radius: number;
+  terrain_affinity: TerrainType;
+  mobility: number;
+  resilience: number;
+};
+
+export type SpeciesBlueprint = {
+  species_id: string;
+  lineage: string;
+  label: string;
+  geometry: GeometryAsset;
+  texture: TextureAsset;
+  behavior: BehaviorAsset;
+  ecology: EcologyTraits;
+  reasoning?: readonly string[];
+};
+
+export type TerrainCell = {
+  id: string;
+  column: number;
+  row: number;
+  x: number;
+  z: number;
+  elevation: number;
+  moisture: number;
+  fertility: number;
+  sunlight: number;
+  terrain_type: TerrainType;
+  dominant_species_id?: string;
+  updated_at_ms: number;
+};
+
 export type EntityProvenance = {
   creator_agent_id: AgentId;
   creator_model_id: ModelId;
@@ -51,6 +125,7 @@ export type WorldEntity = {
   position: Vec3;
   rotationY: number;
   scale: number;
+  species: SpeciesBlueprint;
   shape_profile: EntityShapeProfile;
   behavior_profile: EntityBehaviorProfile;
   shader_profile: EntityShaderProfile;
@@ -76,6 +151,7 @@ export type EvolutionTarget =
 export type EvolutionExpectedFinal = {
   stable?: boolean;
   archetype?: EntityArchetype;
+  species_blueprint?: SpeciesBlueprint;
   shape_profile?: Partial<EntityShapeProfile>;
   behavior_profile?: Partial<EntityBehaviorProfile>;
   shader_profile?: Partial<EntityShaderProfile>;

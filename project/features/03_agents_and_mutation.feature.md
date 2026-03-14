@@ -28,3 +28,15 @@
 - Given an evolution targets an entity
 - When the evolution progresses through its stages
 - Then the entity visibly changes geometry, motion behavior, and shader response over time
+
+## Scenario F03-S06: Agents author species blueprints instead of primitive tweaks
+
+- Given an agent submits an evolution proposal
+- When the proposal is accepted
+- Then it includes generated geometry, generated texture, behavior, and ecology assets for the seed species and target species
+
+## Scenario F03-S07: Species compete and adapt to ecology
+
+- Given plant and animal races share the same world
+- When terrain, sunlight, or territory pressure changes
+- Then species mutate toward new blueprints that adapt to the current rivals and terrain

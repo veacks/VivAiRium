@@ -82,12 +82,84 @@ export function ActivityConsole() {
               </div>
               <div style={{ marginTop: 4, fontSize: 13, fontWeight: 600 }}>{event.scope}</div>
               <div style={{ marginTop: 4, fontSize: 12, lineHeight: 1.4 }}>{event.message}</div>
+              <EventDetails details={event.details} />
             </div>
           ))
         )}
       </div>
     </aside>
   );
+}
+
+function EventDetails({ details }: { details?: Record<string, unknown> }) {
+  const entries = useMemo(
+    () => Object.entries(details ?? {}).filter(([, value]) => value != null),
+    [details],
+  );
+
+  if (entries.length === 0) return null;
+
+  return (
+    <div
+      style={{
+        marginTop: 8,
+        paddingTop: 8,
+        borderTop: "1px solid rgba(138, 184, 255, 0.1)",
+        display: "grid",
+        gap: 6,
+      }}
+    >
+      {entries.map(([key, value]) => (
+        <div key={key} style={{ display: "grid", gap: 3 }}>
+          <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 0.9, opacity: 0.6 }}>
+            {key.replace(/_/g, " ")}
+          </div>
+          <DetailValue value={value} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function DetailValue({ value }: { value: unknown }) {
+  if (Array.isArray(value)) {
+    return (
+      <div style={{ display: "grid", gap: 4 }}>
+        {value.map((item, index) => (
+          <div key={`${index}-${String(item)}`} style={{ fontSize: 11, lineHeight: 1.45, opacity: 0.92 }}>
+            • {formatScalar(item)}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (value && typeof value === "object") {
+    return (
+      <pre
+        style={{
+          margin: 0,
+          whiteSpace: "pre-wrap",
+          wordBreak: "break-word",
+          fontSize: 11,
+          lineHeight: 1.45,
+          opacity: 0.92,
+          fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+        }}
+      >
+        {JSON.stringify(value, null, 2)}
+      </pre>
+    );
+  }
+
+  return <div style={{ fontSize: 11, lineHeight: 1.45, opacity: 0.92 }}>{formatScalar(value)}</div>;
+}
+
+function formatScalar(value: unknown) {
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean") return String(value);
+  if (value == null) return "";
+  return JSON.stringify(value);
 }
 
 function StatusCard({ label, value, tone }: { label: string; value: string; tone: "debug" | "info" | "warn" | "error" }) {

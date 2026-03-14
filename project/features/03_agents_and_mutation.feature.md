@@ -17,3 +17,14 @@
 - Given an agent is mutated to freeze for a duration
 - Then it does not emit proposals until unfrozen
 
+## Scenario F03-S04: Agent reasoning is visible to the operator
+
+- Given an agent prepares an evolution proposal
+- When the operator watches the activity console
+- Then the console shows the agent reasoning, including shape, behavior, and shader intent
+
+## Scenario F03-S05: Agents evolve form, function, and shader together
+
+- Given an evolution targets an entity
+- When the evolution progresses through its stages
+- Then the entity visibly changes geometry, motion behavior, and shader response over time

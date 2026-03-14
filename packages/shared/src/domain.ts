@@ -5,6 +5,33 @@ export type { AgentId, ModelId, EntityId, EvolutionId, PatchId, Id };
 export type Vec3 = readonly [number, number, number];
 
 export type EntityArchetype = "flora" | "fauna" | "rock" | "structure" | "ambient";
+export type EntityShapeKind = "frond" | "pod" | "crystal" | "orb" | "fan";
+export type EntityBehaviorMode = "rooted" | "pulse" | "orbit" | "wander" | "glide";
+export type EntityShaderStyle = "biolume" | "caustic" | "glass" | "ember" | "electric";
+
+export type EntityShapeProfile = {
+  kind: EntityShapeKind;
+  stretch: number;
+  taper: number;
+  wobble: number;
+  ridges: number;
+};
+
+export type EntityBehaviorProfile = {
+  mode: EntityBehaviorMode;
+  amplitude: number;
+  frequency: number;
+  phase: number;
+  drift: number;
+};
+
+export type EntityShaderProfile = {
+  style: EntityShaderStyle;
+  hue_shift: number;
+  pulse: number;
+  distortion: number;
+  fresnel: number;
+};
 
 export type EntityProvenance = {
   creator_agent_id: AgentId;
@@ -20,9 +47,13 @@ export type WorldEntity = {
   provenance: EntityProvenance;
 
   chunk_id: string;
+  anchor_position: Vec3;
   position: Vec3;
   rotationY: number;
   scale: number;
+  shape_profile: EntityShapeProfile;
+  behavior_profile: EntityBehaviorProfile;
+  shader_profile: EntityShaderProfile;
 
   lifecycle_stage: EntityLifecycleStage;
   lifecycle_t: number; // 0..1 within stage
@@ -42,6 +73,19 @@ export type EvolutionTarget =
   | { kind: "chunk"; chunk_id: string }
   | { kind: "agent"; agent_id: AgentId };
 
+export type EvolutionExpectedFinal = {
+  stable?: boolean;
+  archetype?: EntityArchetype;
+  shape_profile?: Partial<EntityShapeProfile>;
+  behavior_profile?: Partial<EntityBehaviorProfile>;
+  shader_profile?: Partial<EntityShaderProfile>;
+  scale?: number;
+  reasoning_summary?: string;
+  reasoning_steps?: readonly string[];
+  assigned_role_models?: Record<string, string>;
+  source_model_name?: string | null;
+};
+
 export type Evolution = {
   id: EvolutionId;
   source_agent_id: AgentId;
@@ -55,7 +99,7 @@ export type Evolution = {
 
   canceled: boolean;
   target: EvolutionTarget;
-  expected_final: Record<string, unknown>;
+  expected_final: EvolutionExpectedFinal;
   history: readonly { at_ms: number; msg: string }[];
 };
 
@@ -89,4 +133,3 @@ export type EntityFeedback = {
   lifecycle: { stage: EntityLifecycleStage; t: number };
   activity: { health: number; instability: number };
 };
-

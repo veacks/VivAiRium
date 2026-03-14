@@ -3,10 +3,29 @@ import { spawn } from "node:child_process";
 const processes = [];
 let shuttingDown = false;
 const functionsPort = process.env.VIVAIRIUM_FUNCTIONS_PORT ?? "9999";
+const supportsProcessGroups = process.platform !== "win32";
+
+function stopChild(child, signal) {
+  if (child.killed) {
+    return;
+  }
+
+  if (supportsProcessGroups && child.pid) {
+    try {
+      process.kill(-child.pid, signal);
+      return;
+    } catch {
+      // Fall back to killing the direct child when the process group is already gone.
+    }
+  }
+
+  child.kill(signal);
+}
 
 function startProcess(name, command, args, options = {}) {
   const child = spawn(command, args, {
     cwd: options.cwd,
+    detached: supportsProcessGroups,
     env: { ...process.env, ...options.env },
     stdio: "inherit",
   });
@@ -30,16 +49,12 @@ function shutdown(exitCode = 0) {
   shuttingDown = true;
 
   for (const { child } of processes) {
-    if (!child.killed) {
-      child.kill("SIGINT");
-    }
+    stopChild(child, "SIGINT");
   }
 
   setTimeout(() => {
     for (const { child } of processes) {
-      if (!child.killed) {
-        child.kill("SIGTERM");
-      }
+      stopChild(child, "SIGTERM");
     }
   }, 1500);
 

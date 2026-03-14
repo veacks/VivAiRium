@@ -18,3 +18,8 @@
 - When distant chunks are unloaded
 - Then simulation continues for entities in those chunks
 
+## Scenario F01-S04: Desktop camera uses orbit controls
+
+- Given the viewer opens the app on desktop
+- When the viewer drags or zooms in the aquarium viewport
+- Then the camera orbits around the aquarium without resetting the simulation

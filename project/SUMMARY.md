@@ -4,10 +4,10 @@
 
 ## Priority capabilities
 
-1. Live 3D aquarium view (desktop + XR) that never stops simulation
+1. Live 3D aquarium view (desktop orbit camera + XR) that never stops simulation
 2. Time-based evolutions with explicit lifecycle stages and cancellation
 3. AI creator agents that create/mutate/delete entities and can mutate other agents
 4. Entity ↔ creator feedback loop (provenance + telemetry back to creator pipeline)
 5. Human influence ingestion (mood boards + voting) filtered through moderation
-6. Webhook/event system for deploy notifications and runtime entity updates
-
+6. Webhook/event system for deploy notifications, runtime entity updates, and visible agent reasoning
+7. Agent-driven evolution that can reshape geometry, behavior, and shader response over time

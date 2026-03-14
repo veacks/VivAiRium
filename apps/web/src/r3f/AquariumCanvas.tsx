@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { XR, createXRStore } from "@react-three/xr";
 import { ChunkRenderer } from "./ChunkRenderer";
+import { OrbitCameraControls } from "./OrbitCameraControls";
 
 const xrStore = createXRStore({});
 
@@ -17,6 +18,7 @@ export function AquariumCanvas() {
         camera={{ position: [0, 6, 14], fov: 55 }}
       >
         <XR store={xrStore}>
+          <OrbitCameraControls />
           <fog attach="fog" args={["#05070b", 10, 80]} />
           <ambientLight intensity={0.55} />
           <directionalLight position={[12, 18, 6]} intensity={1.1} />
@@ -26,4 +28,3 @@ export function AquariumCanvas() {
     </div>
   );
 }
-
